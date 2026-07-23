@@ -1,0 +1,122 @@
+@font-face{font-family:'Raleway';src:url('../fonts/raleway/Raleway-Light.ttf');font-weight:300}
+@font-face{font-family:'Raleway';src:url('../fonts/raleway/Raleway-Regular.ttf');font-weight:400}
+@font-face{font-family:'Raleway';src:url('../fonts/raleway/Raleway-SemiBold.ttf');font-weight:600}
+@font-face{font-family:'Raleway';src:url('../fonts/raleway/Raleway-ExtraBold.ttf');font-weight:800}
+@font-face{font-family:'Raleway';src:url('../fonts/raleway/Raleway-Black.ttf');font-weight:900}
+@font-face{font-family:'Open Sans';src:url('../fonts/opensans/OpenSans-Regular.ttf');font-weight:400}
+@font-face{font-family:'Open Sans';src:url('../fonts/opensans/OpenSans-SemiBold.ttf');font-weight:600}
+@font-face{font-family:'Open Sans';src:url('../fonts/opensans/OpenSans-Bold.ttf');font-weight:700}
+@font-face{font-family:'Prata';src:url('../fonts/prata/Prata-Regular.ttf');font-weight:400}
+
+:root{
+  --rust:#C4421A; --orange:#F98F45; --mint:#97CECC; --teal:#12908E; --pine:#16594A;
+  --ink:#1A1A1A; --paper:#FFFFFF;
+  --hero:'Prata',Georgia,serif; --display:'Raleway',sans-serif; --body:'Open Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:#333;background:var(--paper);line-height:1.6;font-size:1.05rem}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+a{color:inherit}
+img{max-width:100%;display:block}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.8rem 1.2rem;border-radius:0 0 .6rem 0;font-family:var(--body);font-weight:700;font-size:.85rem;z-index:100;text-decoration:none}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible{outline:3px solid #000;outline-offset:2px;box-shadow:0 0 0 6px #fff;border-radius:2px}
+
+nav{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:9}
+nav .row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;flex-wrap:wrap;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand img{width:2.1rem;height:2.1rem}
+.brand span{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink)}
+nav ul{display:flex;gap:.4rem;list-style:none;flex-wrap:wrap}
+nav ul a{font-family:var(--body);font-weight:600;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.5rem .9rem;border-radius:99px;transition:background .15s,color .15s}
+nav ul a:hover,nav ul a[aria-current="page"]{background:var(--rust);color:#fff}
+
+section{padding:5rem 0;border-bottom:1px solid #E2DCCF}
+.eyebrow{display:inline-block;font-family:var(--body);font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.45rem .9rem;border-radius:99px;margin-bottom:1.5rem}
+h1{font-family:var(--hero);font-weight:400;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.08;letter-spacing:-.005em}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(1.9rem,4.4vw,2.8rem);line-height:1.12;margin-bottom:1.4rem}
+h3{font-family:var(--display);font-weight:800;font-size:1.3rem;margin-bottom:.4rem}
+mark{background:var(--teal);color:#fff;padding:0 .15em;box-decoration-break:clone}
+p+p{margin-top:1rem}
+.lede{font-size:1.2rem;color:#4A4A45;max-width:38rem}
+.quiet{color:#6E6A61}
+/* readable measure for prose — v3's .wrap was 46rem site-wide; ours is 68rem for the
+   hero/nav layout, so body copy needs its own narrower line length or it overruns ~120
+   characters per line at desktop widths */
+section>.wrap>p{max-width:44rem}
+.deliv{max-width:44rem}
+.phase p{max-width:36rem}
+.about-hero>div{max-width:36rem}
+
+.cta-group{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+.cta{display:inline-block;margin-top:2rem;background:var(--mint);color:var(--ink);text-decoration:none;font-family:var(--body);font-weight:700;font-size:.9rem;letter-spacing:.03em;text-transform:uppercase;padding:1.05rem 1.8rem;border-radius:.6rem;transition:transform .15s}
+.cta-group .cta,.cta-group .cta-secondary{margin-top:0}
+.cta-secondary{display:inline-block;background:transparent;color:var(--ink);border:2px solid var(--ink);text-decoration:none;font-family:var(--body);font-weight:700;font-size:.9rem;letter-spacing:.03em;text-transform:uppercase;padding:calc(1.05rem - 2px) calc(1.8rem - 2px);border-radius:.6rem;transition:background .15s,color .15s}
+.cta-secondary:hover,.cta-secondary:focus-visible{background:var(--ink);color:#fff}
+.cta:hover,.cta:focus-visible{transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.cta,.cta-secondary{transition:none}}
+.cta-sub{display:block;margin-top:.8rem;font-size:.95rem;color:#6E6A61}
+
+/* hero (index only) */
+#hero{background:var(--rust);color:#fff;padding:6rem 0 7rem;position:relative;overflow:hidden;border-bottom:none}
+.blob{position:absolute;width:28rem;height:28rem;border-radius:63% 37% 54% 46% / 55% 45% 55% 45%;
+  background:var(--teal) url('../images/Patterns-01.png') center/140% repeat;
+  background-blend-mode:multiply;border:3px solid var(--ink);opacity:.97;top:-8rem;right:-10rem;z-index:0}
+#hero .wrap{position:relative;z-index:1}
+#hero .eyebrow{background:rgba(255,255,255,.15)}
+#hero .lede{color:#FBE6DB;max-width:32rem}
+#hero .cta-sub{color:#FBE6DB}
+
+/* page hero (interior pages) */
+.page-hero{background:var(--pine);color:#fff;padding:4.5rem 0}
+.page-hero .eyebrow{background:rgba(255,255,255,.15)}
+.page-hero .lede{color:#DCEFE8}
+
+/* symptom / card grid */
+.grid{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+.card{border:2.5px solid var(--ink);border-radius:1rem;padding:1.6rem}
+.card h3{color:var(--ink)}
+.card p{font-size:.98rem;color:#4A4A45}
+.bridge{margin-top:2.5rem;max-width:44rem;color:#4A4A45}
+.bridge strong{color:var(--ink)}
+
+blockquote{margin-top:2.5rem;background:var(--pine);color:#fff;border-radius:1rem;padding:2rem 2.2rem;font-family:var(--hero);font-weight:400;font-size:1.4rem;font-style:normal;max-width:40rem}
+blockquote cite{display:block;margin-top:.8rem;font-style:normal;font-family:var(--body);font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;opacity:.8}
+
+/* deliverables list */
+.deliv{margin:1.4rem 0 0 1.2rem}
+.deliv li{margin-bottom:.8rem}
+
+/* pricebox */
+.pricebox{border:2.5px solid var(--ink);border-radius:1rem;padding:1.8rem;margin:2rem 0;max-width:40rem}
+.pricebox strong{font-family:var(--display);font-weight:800;font-size:1.05rem;display:block;margin-bottom:.6rem;color:var(--rust)}
+
+/* phases (how i work) */
+.phase{display:grid;grid-template-columns:5.5rem 1fr;gap:1.2rem;padding:1.6rem 0;border-top:1px solid #E2DCCF}
+.phase:last-of-type{border-bottom:1px solid #E2DCCF}
+.pnum{font-family:var(--body);font-weight:700;font-size:.8rem;color:var(--rust);letter-spacing:.06em;padding-top:.3rem}
+.pmeta{font-family:var(--body);font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#6E6A61;display:block;margin:.25rem 0 .5rem}
+@media(max-width:600px){.phase{grid-template-columns:1fr}.pnum{padding:0}}
+
+/* table */
+table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:1rem}
+th{font-family:var(--body);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:.7rem .8rem;border-bottom:2px solid var(--ink)}
+td{padding:.7rem .8rem;border-bottom:1px solid #E2DCCF;vertical-align:top}
+td:first-child{color:#6E6A61}
+td:last-child{font-weight:600}
+
+/* stories */
+.story{margin-bottom:3rem;max-width:44rem}
+.story .slabel{font-family:var(--body);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
+.story h3{margin:.4rem 0 .6rem}
+.story p strong{font-weight:700}
+
+/* about photo */
+.about-hero{display:grid;grid-template-columns:14rem 1fr;gap:2.5rem;align-items:start}
+.about-hero img{border-radius:1rem;border:3px solid var(--ink)}
+@media(max-width:700px){.about-hero{grid-template-columns:1fr;max-width:16rem}}
+
+footer{padding:3rem 0}
+footer p{font-family:var(--body);font-size:.85rem;color:#666}
+footer a{text-decoration:underline}
