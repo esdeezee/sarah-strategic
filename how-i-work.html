@@ -14,7 +14,11 @@
 <nav aria-label="Main">
   <div class="wrap row">
     <a class="brand" href="index.html"><img src="images/SD-Secondary-Logo-Black.png" alt="Sarah Dzida symbol"><span>Sarah Dzida</span></a>
-    <ul>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="index.html#stuck">Stuck?</a></li>
       <li><a href="read-align.html">Read &amp; Align</a></li>
       <li><a href="how-i-work.html" aria-current="page">How I Work</a></li>
@@ -65,5 +69,6 @@
   </div>
 </footer>
 
+<script src="js/nav.js" defer></script>
 </body>
 </html>
