@@ -23,7 +23,7 @@ img{max-width:100%;display:block}
 a:focus-visible,button:focus-visible{outline:3px solid #000;outline-offset:2px;box-shadow:0 0 0 6px #fff;border-radius:2px}
 
 nav{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:9}
-nav .row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;flex-wrap:wrap;gap:1rem}
+nav .row{display:flex;justify-content:space-between;align-items:center;padding-block:1rem;flex-wrap:wrap;gap:1rem}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
 .brand img{width:2.1rem;height:2.1rem}
 .brand span{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink)}
