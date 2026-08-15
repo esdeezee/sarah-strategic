@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diagnosis Stories | Sarah Dzida</title>
 <meta name="description" content="Different industries, companies, and domains, from global brands to startups. Same ecosystem dynamics and problems.">
-<link rel="canonical" href="https://sarahstrategic.com/work.html">
+<link rel="canonical" href="https://sarahstrategic.com/diagnosis-stories.html">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
@@ -13,12 +13,14 @@
 <meta property="og:site_name" content="Sarah Strategic Consulting">
 <meta property="og:title" content="Diagnosis Stories | Sarah Dzida">
 <meta property="og:description" content="Different industries, companies, and domains, from global brands to startups. Same ecosystem dynamics and problems.">
-<meta property="og:url" content="https://sarahstrategic.com/work.html">
-<meta property="og:image" content="https://sarahstrategic.com/images/SD-Secondary-Logo-Black.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://sarahstrategic.com/diagnosis-stories.html">
+<meta property="og:image" content="https://sarahstrategic.com/images/og-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Diagnosis Stories | Sarah Dzida">
 <meta name="twitter:description" content="Different industries, companies, and domains, from global brands to startups. Same ecosystem dynamics and problems.">
-<meta name="twitter:image" content="https://sarahstrategic.com/images/SD-Secondary-Logo-Black.png">
+<meta name="twitter:image" content="https://sarahstrategic.com/images/og-share.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,7 +53,7 @@
     <ul class="nav-links" id="nav-menu">
       <li><a href="index.html#stuck">Stuck?</a></li>
       <li><a href="how-i-work.html">How I Work</a></li>
-      <li><a href="work.html" aria-current="page">Diagnosis Stories</a></li>
+      <li><a href="diagnosis-stories.html" aria-current="page">Diagnosis Stories</a></li>
       <li><a href="about.html">About</a></li>
       <li class="nav-cta"><a href="https://calendly.com/sarah-dzida/intro-meeting?month=2026-07" target="_blank" rel="noopener">Book an Intro</a></li>
     </ul>
@@ -66,14 +68,35 @@
   </div>
 </section>
 
-<section>
+<section class="section-tight-top">
   <div class="wrap">
-    <article class="story" data-cat="smart-team-no-movement">
+    <div class="story-tabs" role="group" aria-label="Filter stories by category">
+      <button type="button" data-cat="all" aria-pressed="true">All stories</button>
+      <button type="button" data-cat="initiative-nowhere" aria-pressed="false">The initiative that goes nowhere</button>
+      <button type="button" data-cat="smart-team-no-movement" aria-pressed="false">Smart team, no movement</button>
+      <button type="button" data-cat="big-vision-no-roadmap" aria-pressed="false">Big vision, no roadmap</button>
+      <button type="button" data-cat="clock-ticking" aria-pressed="false">The clock is ticking &hellip;</button>
+    </div>
+    <div class="story-filter">
+      <button type="button" class="story-filter-toggle" aria-haspopup="listbox" aria-expanded="false" aria-controls="story-filter-list">
+        <span class="story-filter-value">All stories</span>
+        <svg class="story-filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="story-filter-list" role="listbox" id="story-filter-list" aria-label="Filter stories by category" tabindex="-1" hidden>
+        <li role="option" aria-selected="true" data-cat="all" tabindex="0">All stories</li>
+        <li role="option" aria-selected="false" data-cat="initiative-nowhere" tabindex="-1">The initiative that goes nowhere</li>
+        <li role="option" aria-selected="false" data-cat="smart-team-no-movement" tabindex="-1">Smart team, no movement</li>
+        <li role="option" aria-selected="false" data-cat="big-vision-no-roadmap" tabindex="-1">Big vision, no roadmap</li>
+        <li role="option" aria-selected="false" data-cat="clock-ticking" tabindex="-1">The clock is ticking &hellip;</li>
+      </ul>
+    </div>
+
+    <article class="story" data-cat="initiative-nowhere smart-team-no-movement">
       <h2>The global enterprise that couldn't see its own funnel</h2>
       <p>A global audio-sensing company in 2B+ devices worldwide still marketed itself like the B2C sound giant it was 30 years ago. After its $850M acquisition in 2016, the CMO invited me to re-establish the brand's value differentiation in the parent company's portfolio through a website redesign.</p>
       <h3>How I worked:</h3>
       <ul>
-        <li>I brought their brand strategy into the future, repositioning, then bridged their sales and marketing efforts into a unified B2B2C funnel.</li>
+        <li>I brought their brand strategy into the present, then bridged their sales and marketing efforts into a unified B2B2C funnel.</li>
         <li>I facilitated collaborative cross-team workshops to ensure in-office and remote teams understood the new reality.</li>
         <li>Once they did, the stalled initiatives unstuck themselves: website relaunched as a marketing vehicle, unified CRM workflows, a dormant 50K mailing list reactivated, the 30th anniversary campaign turned into a customer acquisition channel, etc.</li>
         <li>The best part was watching the team get unblocked and set free!</li>
@@ -82,7 +105,7 @@
       </ul>
     </article>
 
-    <article class="story" data-cat="big-vision-no-roadmap" data-cat="clock-ticking">
+    <article class="story" data-cat="initiative-nowhere big-vision-no-roadmap clock-ticking">
       <h2>The stealth startup with a big AI vision</h2>
       <p>This customer experience agency was also an AI stealth startup in disguise. While working on a B2B SaaS platform, they also were selling an AI vision to investors with deeper pockets. What leadership didn't realize was how the two competing concepts were confusing the team and endangering the launch deadlines.</p>
       <h3>How I worked:</h3>
@@ -93,7 +116,7 @@
       </ul>
     </article>
 
-    <article class="story" data-cat="clock-ticking" data-cat="initiative-nowhere">
+    <article class="story" data-cat="initiative-nowhere clock-ticking">
       <h2>The Fortune 1000 global brand with a 4-month deadline</h2>
       <p>This global property-intelligence company with private investment talks on the table wanted to relaunch their website with a new brand strategy. But departments were operating in legacy silos, and no one knew how to bring them all together. The CMO brought me in to get them unstuck.</p>
       <h3>How I worked:</h3>
@@ -107,7 +130,7 @@
       </ul>
     </article>
 
-    <article class="story" data-cat="smart-team-no-movement">
+    <article class="story" data-cat="smart-team-no-movement big-vision-no-roadmap">
       <h2>The startup with no systems to handle growth</h2>
       <p>An innovation lab with millions in government funding and a complex design-for-manufacturing chain had no connective tissue tying strategy to execution. Everything lived siloed in each person's head. They knew it; but they didn't know how to fix it. They asked me to figure it out.</p>
       <h3>How I worked:</h3>
@@ -120,7 +143,7 @@
       </ul>
     </article>
 
-    <article class="story" data-cat="big-vision-no-roadmap">
+    <article class="story" data-cat="smart-team-no-movement big-vision-no-roadmap">
       <h2>The multi-city events business that couldn't scale</h2>
       <p>The founder knew the feast-or-famine business model wasn't scalable and the team was drowning in logistics. They just didn't know how to get everyone's head above water to cultivate growth; and I was asked to figure it out for them by the Senior Creative Director.</p>
       <h3>How I worked:</h3>
@@ -134,12 +157,40 @@
   </div>
 </section>
 
+<section class="trusted">
+  <div class="wrap">
+    <span class="trusted-label">Trusted by</span>
+    <button class="trusted-arrow prev" type="button" aria-label="Previous clients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <div class="carousel-wrapper" aria-live="polite">
+      <ul class="trusted-track carousel-slide">
+        <li class="trusted-item"><img src="images/Toyota-Trusted-By.png" alt="Toyota" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/CoreLogic-Trusted-By.png" alt="CoreLogic" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/HFG-Trusted-By.png" alt="Harry Frank Guggenheim Foundation" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/Emory-Trusted-By.png" alt="Emory Healthcare" width="140" height="140"></li>
+      </ul>
+      <ul class="trusted-track carousel-slide active">
+        <li class="trusted-item"><img src="images/Lexus-Trusted-By.png" alt="Lexus" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/Gensler-Trusted-By.png" alt="Gensler" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/LA-Trusted-by.png" alt="City of Los Angeles" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/Xperi-Trusted-By.png" alt="Xperi" width="140" height="140"></li>
+      </ul>
+      <ul class="trusted-track carousel-slide">
+        <li class="trusted-item"><img src="images/USC-Trusted-By.png" alt="USC" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/Solidigm-Trusted-By.png" alt="Solidigm" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/MCR-Labs-Trusted-By.png" alt="MCR Labs" width="140" height="140"></li>
+        <li class="trusted-item"><img src="images/Walmart-Trusted-By.png" alt="Walmart" width="140" height="140"></li>
+      </ul>
+    </div>
+    <button class="trusted-arrow next" type="button" aria-label="Next clients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
 <section class="testimonial-band pattern-gold">
   <div class="wrap">
     <div class="tcard">
       <blockquote>&ldquo;It was a privilege to build with Sarah. Grateful we got to do it together with integrity.&rdquo;</blockquote>
       <hr>
-      <cite>Christopher Everett &middot; Creative Architect for Brand, Product &amp; AI Systems &middot; EVERETT &amp; CO</cite>
+      <cite><span class="cite-name">Christopher Everett</span> &middot; <span class="cite-role">Creative Architect for Brand, Product &amp; AI Systems &middot; EVERETT &amp; CO</span></cite>
     </div>
   </div>
 </section>
@@ -160,12 +211,14 @@
   <div class="wrap row">
     <div>
       <p>Sarah Dzida &middot; Sarah Strategic Consulting &middot; <a href="mailto:sarah@sarahdzida.com">sarah@sarahdzida.com</a></p>
-      <p class="credit">Built with Claude Code &middot; Branding by Mila Thomsen</p>
+      <p class="credit">Built with Claude Code &middot; Branding by <a href="https://strangerka.com/" target="_blank" rel="noopener">Mila Thomsen</a></p>
     </div>
-    <a class="social" href="https://www.linkedin.com/in/sarahdzida/" target="_blank" rel="noopener" aria-label="Sarah Dzida on LinkedIn"><img src="images/mdi_linkedin.svg" alt=""></a>
+    <a class="social" href="https://www.linkedin.com/in/sarahdzida/" target="_blank" rel="noopener" aria-label="Sarah Dzida on LinkedIn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z" fill="currentColor"/></svg></a>
   </div>
 </footer>
 
 <script src="js/nav.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/stories.js" defer></script>
 </body>
 </html>
