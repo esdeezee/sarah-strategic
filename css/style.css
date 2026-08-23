@@ -882,8 +882,8 @@ td:last-child{
   margin-bottom:0.8rem;
 }
 
-/* pricebox */
-.pricebox{
+/* callout box — design-system-v4 §1.7's generic teal-bordered callout, not pricing-specific */
+.callout{
   border:1px solid var(--teal);
   border-radius:16px;
   padding:1.8rem;
@@ -891,7 +891,7 @@ td:last-child{
   max-width:40rem;
 }
 
-.pricebox strong{
+.callout strong{
   font-family:var(--font-heading);
   font-weight:700;
   font-size:1rem;
@@ -900,12 +900,22 @@ td:last-child{
   color:var(--teal);
 }
 
-.pricebox .note{
+.callout .note{
   font-family:var(--font-body);
   color:var(--ink);
   font-weight:700;
   font-size:1rem;
   margin-top:0.8rem;
+}
+
+.callout .note a{
+  color:var(--ink);
+  text-decoration:underline;
+}
+
+.callout .note a:hover,
+.callout .note a:focus-visible{
+  color:var(--red);
 }
 
 /* phases (how i work) */
