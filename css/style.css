@@ -289,6 +289,113 @@ nav .wrap{
   }
 }
 
+/* nav dropdown ("How I Work") — disclosure button + submenu.
+   Closed by default; JS toggles .is-open. Without JS (html lacks .js) it opens on hover/focus-within instead. */
+.nav-links .has-sub{
+  position:relative;
+  align-self:stretch;   /* li spans the full bar height so the panel opens flush under the nav border */
+  align-items:center;
+}
+
+.nav-sub-toggle{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:0.9rem;
+  color:var(--ink);
+  background:none;
+  border:0;
+  padding:0.5rem 0.9rem;
+  height:44px;
+  display:inline-flex;
+  align-items:center;
+  gap:0.45rem;
+  cursor:pointer;
+  transition:color 0.15s;
+}
+
+.nav-sub-toggle svg{
+  width:0.7rem;
+  height:0.45rem;
+  flex-shrink:0;
+  transition:transform 0.15s;
+}
+
+.nav-sub-toggle[aria-expanded="true"] svg{
+  transform:rotate(180deg);
+}
+
+.nav-sub-toggle:hover,
+.nav-sub-toggle:focus-visible{
+  color:var(--coral);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+.has-sub.is-current-section>.nav-sub-toggle{
+  color:var(--teal);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+.has-sub.is-current-section>.nav-sub-toggle:hover,
+.has-sub.is-current-section>.nav-sub-toggle:focus-visible{
+  color:var(--coral);
+}
+
+.nav-sub{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:16rem;
+  flex-direction:column;
+  list-style:none;
+  padding:0.4rem 0;
+  background:white;
+  border:1px solid var(--ink);
+  z-index:10;
+}
+
+.nav-links .nav-sub a{
+  width:100%;
+  height:auto;
+  min-height:44px;
+  padding:0.6rem 1rem;
+}
+
+.has-sub.is-open>.nav-sub,
+html:not(.js) .has-sub:hover>.nav-sub,
+html:not(.js) .has-sub:focus-within>.nav-sub{
+  display:flex;
+}
+
+@media(max-width:1199px){
+  .nav-links li.has-sub{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  /* mobile/tablet panel: everything left-aligned on the same edge as Home / Real Stories / About */
+  .nav-sub-toggle{
+    width:100%;
+    justify-content:flex-start;
+    text-align:left;
+    padding:0.7rem 0.9rem;
+  }
+  .nav-sub{
+    position:static;
+    border:0;
+    min-width:0;
+    padding:0;
+  }
+  .nav-links .nav-sub a{
+    padding:0.6rem 0.9rem;
+    justify-content:flex-start;
+    text-align:left;
+  }
+}
+
 .nav-toggle[aria-expanded="false"]:hover .nav-toggle-bars{
   background:var(--coral);
 }
@@ -543,6 +650,8 @@ section>.wrap>p{
 
 #hero h1{
   color:white;
+  /* three-sentence lockup: capped at 3rem (not 3.5) so each sentence holds one line beside the signature */
+  font-size:clamp(2rem, 1.35rem + 2.2vw, 3rem);
 }
 
 #hero .lede{
@@ -616,7 +725,10 @@ section>.wrap>p{
 }
 
 .page-hero .eyebrow{
-  background:rgba(255,255,255,0.15);
+  background:none;
+  color:white;
+  font-weight:700;
+  padding:0;
 }
 
 .page-hero .lede{
@@ -650,12 +762,12 @@ section>.wrap>p{
   border-color:var(--teal);
 }
 
-#stuck{
+section[id]{
   scroll-margin-top:80px;
 }
 
 @media(max-width:599px){
-  #stuck{scroll-margin-top:64px}
+  section[id]{scroll-margin-top:64px}
 }
 
 .framed-actions{
@@ -677,8 +789,66 @@ section>.wrap>p{
   margin:0;
 }
 
+/* gold hairline between stacked content sections (How I Work pages) */
+.rule-top{
+  border-top:1px solid var(--yellow);
+}
+
+/* plain bulleted list */
+.bullets{
+  margin:1.2rem 0 0 1.2rem;
+  max-width:44rem;
+}
+
+.bullets li{
+  margin-bottom:0.5rem;
+}
+
+/* inline client quote (Home stories, How I Work "What changes") — design-system §1.5 "Pull quote" type,
+   attribution in the §1.5 cite-role style. Not the testimonial band: that's .tcard. */
+.client-quote{
+  margin:1.2rem 0 0.8rem;
+  max-width:44rem;
+}
+
+.client-quote blockquote{
+  border-left:2px solid var(--teal);
+  padding-left:0.9rem;
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  line-height:1.5;
+  color:var(--ink);
+}
+
+.client-quote figcaption{
+  margin-top:0.8rem;
+  font-size:0.875rem;
+  line-height:1.5;
+  color:var(--olive-text);
+}
+
+/* audience cards (Home → "Who I work with") */
+.audience-card{
+  display:flex;
+  flex-direction:column;
+  border:3px solid var(--yellow);
+  border-radius:16px;
+  padding:2rem 1.75rem;
+}
+
+.audience-card p{
+  margin-top:1.2rem;
+}
+
+.audience-card .read-more{
+  margin-top:auto;
+  padding-top:1.5rem;
+}
+
 /* symptom / card grid */
 .grid{
+  list-style:none;
   margin-top:1.8rem;
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -687,6 +857,12 @@ section>.wrap>p{
 
 @media(max-width:899px){
   .grid{grid-template-columns:1fr}
+}
+
+.grid>li{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
 }
 
 .grid h3{
@@ -701,8 +877,12 @@ section>.wrap>p{
 }
 
 .grid .read-more{
-  display:inline-block;
-  margin-top:0.6rem;
+  display:inline-flex;
+  align-items:center;
+  gap:0.35em;        /* replaces the space after the arrow, which flex layout collapses */
+  min-height:44px;   /* design-system §3.6: 44px hit height */
+  margin-top:auto;   /* pins the link to the bottom of its card so a row of links lines up */
+  padding-top:0.6rem;
   color:var(--red);
   font-weight:700;
   font-size:0.85rem;
@@ -790,38 +970,42 @@ section>.wrap>p{
   margin:0;
 }
 
-.tcard hr{
-  border:none;
+/* design-system §3.14: the hairline is the figcaption's own top border (was an <hr>) */
+.tcard figcaption{
+  margin-top:1.2rem;
+  padding-top:1.2rem;
   border-top:1px solid var(--teal);
-  margin:1.2rem 0;
-  height:0;
+  font-family:var(--font-body);
+  font-size:0.875rem;
+  line-height:1.5;
 }
 
-.testimonial-band.pattern-olive .tcard hr{
-  border-top-color: #f8c417;
+.testimonial-band.pattern-olive .tcard figcaption{
+  border-top-color:#f8c417;
 }
 
-.testimonial-band.pattern-coral .tcard hr{
+.testimonial-band.pattern-coral .tcard figcaption{
   border-top-color:#26575A;
 }
 
-.testimonial-band.pattern-red .tcard hr{
+.testimonial-band.pattern-red .tcard figcaption{
   border-top-color:#B8BDA8;
 }
 
-.testimonial-band.pattern-gold .tcard hr{
+.testimonial-band.pattern-gold .tcard figcaption{
   border-top-color:#858E69;
 }
 
-.testimonial-band.pattern-darkteal .tcard hr{
+.testimonial-band.pattern-darkteal .tcard figcaption{
   border-top-color:#FBDD78;
 }
 
 .tcard cite{
-  display:block;
   font-style:normal;
-  font-family:var(--font-body);
-  font-size:0.875rem;
+}
+
+.cite-co{
+  white-space:nowrap;
 }
 
 .cite-name{
@@ -830,6 +1014,13 @@ section>.wrap>p{
 }
 
 .cite-role{
+  font-weight:400;
+  color:var(--olive-text);
+}
+
+.cite-context{
+  display:block;
+  margin-top:0.2rem;
   font-weight:400;
   color:var(--olive-text);
 }
@@ -882,7 +1073,7 @@ td:last-child{
   margin-bottom:0.8rem;
 }
 
-/* callout box — design-system-v4 §1.7's generic teal-bordered callout, not pricing-specific */
+/* callout box — design-system-v5 §1.7's generic teal-bordered callout, not pricing-specific */
 .callout{
   border:1px solid var(--teal);
   border-radius:16px;
@@ -982,11 +1173,25 @@ td:last-child{
 }
 
 /* stories */
+/* Filter row (681px+; ≤680 swaps to the custom listbox below).
+   "All stories" sizes to its text, the story tabs share the rest in equal columns, so the row stays one
+   aligned line at tablet instead of wrapping raggedly; long labels wrap inside their column. */
 .story-tabs{
-  display:flex;
-  gap:0.3rem;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:auto;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(0,1fr);
+  gap:0.3rem 1rem;
+  align-items:start;
   margin:0 0 2.5rem;
+}
+
+@media(min-width:1200px){
+  .story-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.3rem 1.5rem;
+  }
 }
 
 .story-filter{
@@ -1099,7 +1304,11 @@ td:last-child{
   color:var(--red);
   padding:0.6rem 0.5rem;
   cursor:pointer;
-  height:44px;
+  min-height:44px;
+  max-width:11.5rem;
+  text-align:left;
+  justify-self:start;
+  line-height:1.35;
   display:inline-flex;
   align-items:center;
 }
@@ -1215,6 +1424,29 @@ td:last-child{
   list-style:none;
 }
 
+/* Logos are always 4-across or a 2×2 — never 3+1 (design-system §3.16 "wrap to 2×2 instead of clipping").
+   flex-wrap dropped a single logo whenever the track was a few px short of four; an explicit grid can't.
+   Gap tightens ≤1199 so four still fit from 900 up; ≤639 switches to 2×2 (≤400 pages two at a time via carousel.js). */
+.trusted-track.carousel-slide.active{
+  display:grid;
+  grid-template-columns:repeat(4,max-content);
+  justify-content:center;
+}
+
+@media(max-width:1199px){
+  .trusted-track.carousel-slide.active{gap:1.25rem}
+}
+
+@media(max-width:639px){
+  .trusted-track.carousel-slide.active{grid-template-columns:repeat(2,max-content)}
+}
+
+/* 320–360px: two 80px logos + arrows don't fit the track (min supported width is 320, no clipping) */
+@media(max-width:360px){
+  .trusted-track.carousel-slide.active{gap:0.5rem}
+  .trusted .trusted-item{width:68px;height:68px}  /* .trusted prefix: the 80px rule below it would otherwise win on source order */
+}
+
 @media(prefers-reduced-motion:reduce){
   .trusted-track{scroll-behavior:auto}
 }
@@ -1293,7 +1525,6 @@ td:last-child{
 }
 
 .trusted-track.carousel-slide.active{
-  display:flex;
   animation:carouselFade 0.4s ease;
 }
 
