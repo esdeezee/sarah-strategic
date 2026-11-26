@@ -260,8 +260,11 @@ nav .wrap{
 .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(-0.4rem) rotate(-45deg)}
 
 @media(max-width:1199px){
-  .nav-toggle{display:inline-flex}
-  .nav-links{
+  /* Progressive enhancement (design-system §3.2: nav visible by default, collapsed by JS).
+     The hamburger and the collapsed panel exist only once the inline <head> script has put .js on <html>;
+     without JS every link stays visible and wraps under the brand. */
+  .js .nav-toggle{display:inline-flex}
+  .js .nav-links{
     display:none;
     position:absolute;
     top:100%;
@@ -274,7 +277,7 @@ nav .wrap{
     background:white;
     border-bottom:1px solid var(--ink);
   }
-  .nav-links.is-open{display:flex}
+  .js .nav-links.is-open{display:flex}
   .nav-links a{
     display:block;
     padding:0.7rem 0.9rem;
@@ -394,6 +397,30 @@ html:not(.js) .has-sub:focus-within>.nav-sub{
     justify-content:flex-start;
     text-align:left;
   }
+
+  /* No-JS fallback: one wrapping row of every link (the dropdown's two links sit inline after its label) */
+  html:not(.js) nav{height:auto}
+  html:not(.js) nav .wrap{
+    flex-wrap:wrap;
+    height:auto;
+    padding-top:0.75rem;
+    padding-bottom:0.75rem;
+    row-gap:0.25rem;
+  }
+  html:not(.js) .nav-links{
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    flex-basis:100%;
+  }
+  html:not(.js) .nav-links li.has-sub,
+  html:not(.js) .nav-sub{display:contents}
+  html:not(.js) .nav-sub-toggle{
+    width:auto;
+    pointer-events:none;
+    cursor:default;
+  }
+  html:not(.js) .nav-sub-toggle svg{display:none}
+  html:not(.js) .nav-links .nav-sub a{padding:0.5rem 0.9rem}
 }
 
 .nav-toggle[aria-expanded="false"]:hover .nav-toggle-bars{
@@ -1173,7 +1200,7 @@ td:last-child{
 }
 
 /* stories */
-/* Filter row (681px+; ≤680 swaps to the custom listbox below).
+/* Filter row (768px+; ≤767 swaps to the custom listbox below — the long labels get 3–4 lines under ~740px).
    "All stories" sizes to its text, the story tabs share the rest in equal columns, so the row stays one
    aligned line at tablet instead of wrapping raggedly; long labels wrap inside their column. */
 .story-tabs{
@@ -1200,7 +1227,7 @@ td:last-child{
   margin:0 0 2.5rem;
 }
 
-@media(max-width:680px){
+@media(max-width:767px){
   .story-tabs{display:none}
   .story-filter{display:block}
 }
